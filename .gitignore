@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# pyenv
+.python-version
+
+# uv
+.uv/
+
+# mypy
+.mypy_cache/
+
+# ruff
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Distribution / packaging
+*.egg
+MANIFEST
