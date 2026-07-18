@@ -43,3 +43,5 @@ env/
 # Distribution / packaging
 *.egg
 MANIFEST
+# Data
+data/
