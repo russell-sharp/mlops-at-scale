@@ -19,6 +19,8 @@ sc = SparkContext()
 glueContext = GlueContext(sc)
 logger = glueContext.get_logger()
 spark = glueContext.spark_session
+spark.conf.set("spark.sql.caseSensitive", "false")
+# set case insensitivity for spark backwards compatibility
 
 job = Job(glueContext)
 job.init(args['JOB_NAME'], args) # retrieve JOB_NAME parameter
@@ -34,7 +36,7 @@ df.createOrReplaceTempView("{}".format(DST_VIEW_NAME))
 
 query_df = spark.sql("""
     SELECT
-        origin_datetime_tr,
+        origindatetime_tr,
 
         CAST(fareamount AS DOUBLE) AS fareamount_double,
         CAST(fareamount AS STRING) AS fareamount_string,
@@ -49,12 +51,12 @@ query_df = spark.sql("""
         CAST(destination_block_latitude AS STRING)
             AS destination_block_latitude_string,
         
-        desination_block_longitude,
+        destination_block_longitude,
         CAST(destination_block_longitude AS STRING)
             AS destination_block_longitude_string,
                      
         CAST(mileage AS DOUBLE) AS mileage_double,
-        CAST(mlieage AS STRING) AS mileage_string
+        CAST(mileage AS STRING) AS mileage_string
     
     FROM dc_taxi_csv
                      
