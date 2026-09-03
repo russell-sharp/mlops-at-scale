@@ -41,17 +41,17 @@ query_df = spark.sql("""
         CAST(fareamount AS DOUBLE) AS fareamount_double,
         CAST(fareamount AS STRING) AS fareamount_string,
 
-        origin_block_latitude,
+        origin_block_latitude AS origin_block_latitude_double,
         CAST(origin_block_latitude AS STRING) AS origin_block_latitude_string,
         
-        origin_block_longitude,
+        origin_block_longitude AS origin_block_longitude_double,
         CAST(origin_block_longitude as STRING) AS origin_block_longitude_string,
                      
-        destination_block_latitude,
+        destination_block_latitude AS destination_block_latitude_double,
         CAST(destination_block_latitude AS STRING)
             AS destination_block_latitude_string,
         
-        destination_block_longitude,
+        destination_block_longitude AS destination_block_longitude_double,
         CAST(destination_block_longitude AS STRING)
             AS destination_block_longitude_string,
                      
