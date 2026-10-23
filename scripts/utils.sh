@@ -135,7 +135,7 @@ function pyspark_run_job {
       "Name": "glueetl",
       "PythonVersion": "3"
     }' \
-    --glue-version "2.0"
+    --glue-version "4.0"
 
   aws glue start-job-run \
     --job-name $PYSPARK_JOB_NAME \
@@ -156,9 +156,6 @@ function pyspark_run_job {
       )'",
     --SEED="'$(
         echo ${SEED:-42}
-      )'",
-    --additional-python-modules="'$(
-        echo $ADDITIONAL_PYTHON_MODULES
       )'"'
 
   printf "Waiting for the job to finish..."
