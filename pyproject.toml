@@ -3,6 +3,11 @@ name = "mlops-at-scale"
 version = "0.1.0"
 description = "Working through Carl Osipov's MLOps Engineering at Scale"
 requires-python = ">=3.12"
+dependencies = [
+    "fsspec>=2026.9.0",
+    "pandas>=3.1.0",
+    "s3fs>=2026.9.0",
+]
 
 [tool.ruff]
 line-length = 88
@@ -19,3 +24,8 @@ ignore_missing_imports = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "--tb=short"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+]
